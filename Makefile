@@ -3,7 +3,6 @@ VERSION := $(shell git describe --tag --abbrev=0)
 NEXT_VERSION:=$(shell git describe --tags --abbrev=0 | awk -F . '{OFS="."; $$NF+=1; print}')
 SHA1 := $(shell git rev-parse HEAD)
 NOW := $(shell date -u +'%Y%m%d-%H%M%S')
-DSN := $(shell cat .env | grep LOCAL_TEST_DSN | awk -F '=' '{print $$2}')
 
 
 
