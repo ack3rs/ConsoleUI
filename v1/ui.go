@@ -2,11 +2,8 @@ package v1
 
 import (
 	"fmt"
-	"os"
 	"os/exec"
 	"strings"
-	"syscall"
-	"time"
 )
 
 // https://gist.github.com/fnky/458719343aabd01cfb17a3a4f7296797
@@ -48,27 +45,30 @@ func MoveX(x int) {
 	generalOut(fmt.Sprintf("\033[%dC", x))
 }
 
+/*
 func GetCurrent() (int, int) {
-	generalOut("\033[6n")
+    generalOut("\033[6n")
 
-	var buf [16]byte
-	var x, y int
+    var buf [16]byte
+    var x, y int
 
-	fd := int(os.Stdin.Fd())
-	var readfds syscall.FdSet
-	readfds.Bits[fd/64] |= 1 << (uint(fd) % 64)
+    fd := int(os.Stdin.Fd())
+    var readfds syscall.FdSet
+    readfds.Bits[fd/64] |= 1 << (uint(fd) % 64)
 
-	timeout := syscall.NsecToTimeval(100 * time.Millisecond.Nanoseconds())
-	err := syscall.Select(fd+1, &readfds, nil, nil, &timeout)
-	if err != nil {
-		return 0, 0
-	}
+    timeout := syscall.NsecToTimeval(100 * time.Millisecond.Nanoseconds())
+    err := syscall.Select(fd+1, &readfds, nil, nil, &timeout)
+    if err != nil {
+        return 0, 0
+    }
 
-	n, _ := os.Stdin.Read(buf[:])
-	fmt.Sscanf(string(buf[:n]), "\033[%d;%dR", &y, &x)
+    n, _ := os.Stdin.Read(buf[:])
+    fmt.Sscanf(string(buf[:n]), "\033[%d;%dR", &y, &x)
 
-	return x, y
+    return x, y
 }
+
+*/
 
 func Clear() {
 
