@@ -1,4 +1,4 @@
-module ConsoleUI
+module github.com/ack3rs/ConsoleUI
 
 go 1.24.0
 
