@@ -7,6 +7,7 @@ import (
 	"github.com/eiannone/keyboard"
 )
 
+// Get retrieves a single character and a key press event from the keyboard. It initializes and closes the keyboard session.
 func Get() (rune, keyboard.Key) {
 
 	err := keyboard.Open()

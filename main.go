@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	v1 "ConsoleUI/v1"
+	v1 "github.com/ack3rs/ConsoleUI/v1"
 )
 
 func main() {

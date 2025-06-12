@@ -12,6 +12,7 @@ func generalOut(in string) {
 	fmt.Print(in)
 }
 
+// Out replaces placeholders in the input string with corresponding values from ColourMap and prints the result to screen.
 func Out(OutputToScreen string) {
 
 	for k, v := range ColourMap {
@@ -20,6 +21,7 @@ func Out(OutputToScreen string) {
 	generalOut(OutputToScreen)
 }
 
+// MoveTo moves the terminal cursor to the specified x (column) and y (row) coordinates.
 func MoveTo(x int, y int) {
 	generalOut(fmt.Sprintf("\033[%d;%dH", y, x))
 }
